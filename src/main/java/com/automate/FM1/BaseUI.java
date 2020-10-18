@@ -26,17 +26,17 @@ public class BaseUI {
 			WebDriverManager.chromedriver().setup();
 			//$options.addArguments("--Incognito");
 			$driver=new ChromeDriver();
-			$driver.manage().window().maximize();
+			
 		}
 		else if(browser.equals("firefox")) {
 			WebDriverManager.firefoxdriver().setup();
 			//$options.addArguments("--Incognito");
 			$driver=new FirefoxDriver();
-			$driver.manage().window().maximize();
 		}
 		else {
 			System.out.println("We dont have other browser driver Info");
 		}
+		$driver.manage().window().maximize();
 	}
 	
 	public void openURL(String weburl) {
