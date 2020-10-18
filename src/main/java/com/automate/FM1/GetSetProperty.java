@@ -12,6 +12,7 @@ public class GetSetProperty {
 	private static final String propertyFilePath = System.getProperty("user.dir")
 			+ "\\src\\main\\java\\com\\heat\\utilities\\config.properties";
 	private static String URL=null;
+	private static String sign_In=null;
 	
 	public static void setPropertiesFileReaderPath() {
 		BufferedReader reader;
@@ -39,6 +40,16 @@ public class GetSetProperty {
 			return URL;
 		else
 			throw new RuntimeException("URL not specified in the config.properties file.");
+
+	}
+	
+	public static String setlocators() {
+		setPropertiesFileReaderPath();
+		sign_In = prop.getProperty("SignIn_button");
+		if (sign_In != null)
+			return sign_In;
+		else
+			throw new RuntimeException("sign_In path not specified in the config.properties file.");
 
 	}
 	
